@@ -17,7 +17,7 @@ interface Props {
 
 // Define the context provider as a functional component
 const ContextProvider: FC<Props> = ({ children }) => {
-  const [sideBarToggle, setSideBarToggle] = useState<boolean>(false);
+  const [sideBarToggle, setSideBarToggle] = useState<boolean>(true);
 
   // Return the provider with the context value
   return (
