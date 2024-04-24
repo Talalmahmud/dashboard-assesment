@@ -1,8 +1,7 @@
 "use client";
 import React, { useContext, useState } from "react";
 import { Context } from "../ContextProvider";
-import Image from "next/image";
-import Link from "next/link";
+
 import MenuList from "../menulist/MenuList";
 import MenuItem from "../menulist/MenuItem";
 
