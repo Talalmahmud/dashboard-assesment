@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ContextProvider from "@/components/ContextProvider";
+import SideBar from "@/components/sidebar/SideBar";
+import TopsideBar from "@/components/sidebar/TopsideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ContextProvider>
+          <div className="flex">
+            <SideBar />{" "}
+            <div className=" w-full flex flex-col">
+              <TopsideBar />
+              <div className=" px-[16px] py-2">{children}</div>
+            </div>
+          </div>
+        </ContextProvider>
+      </body>
     </html>
   );
 }
